@@ -16,7 +16,7 @@
 // 2/22/25 Setting up to match "C:\Users\jhsch\Documents\Development\zmk-urchin\Urchin Layouts.xlsx"
 #include QMK_KEYBOARD_H
 
-enum planck_layers { _DEFAULT, _FLIP, _NAV, _NUM, _FUN, _SYM, _SET };
+enum planck_layers { _DEFAULT, _FLIP, _NAV, _NUM, _FUN, _SYM, _SET, _RSET };
 
 enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV };
 
@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     SYM,     KC_W,    KC_F,    KC_P,    KC_B,    KC_NO,   KC_NO,   KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, 
     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,    KC_NO,   KC_NO,   KC_M,    KC_N,    KC_E,    KC_I,    KC_O,    
     NUM,     KC_X,    KC_C,    KC_D,    KC_V,    KC_NO,   KC_NO,   KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_QUOT, 
-    MO(_SYM),KC_NO,   KC_NO,   NAV,     FLIP,    MO(_FUN),MO(_NAV),SYM2,    FUN,     KC_NO,   KC_NO,   _SET
+    MO(_SYM),KC_NO,   KC_NO,   NAV,     FLIP,    MO(_FUN),MO(_NAV),SYM2,    FUN,     KC_NO,   KC_NO,   _RSET
 ),
 
 [_FLIP] = LAYOUT_planck_grid(
@@ -91,6 +91,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, _______, _______, UG_TOGG, UG_NEXT, UG_HUEU, UG_HUED, UG_SATU, UG_SATD, 
     _______, _______, _______, _______, _______, _______, MU_NEXT, AU_ON,   AU_OFF,  _______, UG_SPDU, UG_SPDD, 
     _______, _______, _______, _______, _______, _______, MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  _______, _______, 
+    QK_BOOT, DB_TOGG, EE_CLR,  _______, _______, _______, _______, _______, _______, _______, _______, _______  
+),
+
+[_RSET] = LAYOUT_planck_grid(
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
+    _______, _______, _______, _______, _______, _______, _______, KC_RGUI, KC_RCTL, KC_RSFT, KC_RALT, _______, 
+    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
     QK_BOOT, DB_TOGG, EE_CLR,  _______, _______, _______, _______, _______, _______, _______, _______, _______  
 )
 
