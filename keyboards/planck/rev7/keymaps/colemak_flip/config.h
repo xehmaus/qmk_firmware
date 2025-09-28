@@ -20,6 +20,7 @@
 //#define COMBO_MUST_HOLD_MODS
 //#define COMBO_HOLD_TERM 150
 #define COMBO_ONLY_FROM_LAYER 0
+#define ONESHOT_TIMEOUT 5000  /* Time (in ms) before the one shot key is released */
 
 #ifdef AUDIO_ENABLE
 #    define STARTUP_SONG SONG(PLANCK_SOUND)
